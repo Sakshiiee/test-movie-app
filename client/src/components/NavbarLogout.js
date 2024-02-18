@@ -9,6 +9,7 @@ export default function Navbar() {
   async function logoutFunction() {
     localStorage.removeItem("moviesToken");
     navigate(`/login`);
+    //
   }
 
   async function goToDashboard() {
