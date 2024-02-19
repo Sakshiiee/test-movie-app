@@ -35,9 +35,9 @@ export default function Watchlist({ accountinformation , getAccountInformation }
     }
   }
   return (
-    <div className=" px-10">
-      <span className="block text-start text-3xl ">Watchlist</span>
-      <div className="grid grid-cols-4 my-6">
+    <div className="  px-3 my-2 lg:my-0 lg:px-10 h-screen">
+      <span className="block text-start text-3xl ">Watchlist </span>
+      <div className="grid  grid-cols-2 lg:grid-cols-4 my-8 ">
         {accountinformation.watchlist.length > 0 ? (
           accountinformation.watchlist.map((like, index) => {
             return (

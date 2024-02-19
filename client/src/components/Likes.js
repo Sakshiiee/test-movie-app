@@ -31,9 +31,9 @@ export default function Likes({ accountinformation, getAccountInformation }) {
     }
   }
   return (
-    <div className=" px-10">
+    <div className="  px-3 my-2 lg:my-0 lg:px-10 h-screen">
       <span className="block text-start text-3xl ">Likes </span>
-      <div className="grid grid-cols-4 my-8 ">
+      <div className="grid grid-cols-2 lg:grid-cols-4 my-8 ">
         {accountinformation.likes && accountinformation.likes.length > 0 ? (
           accountinformation.likes.map((like, index) => {
             return (

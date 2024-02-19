@@ -3,9 +3,9 @@ import moment from "moment";
 
 export default function AccountInformation({ accountinformation }) {
   return (
-    <div className="px-10">
-      <div className="block text-start text-3xl w-1/2 mx-auto mt-20">
-        <h1>Account Information</h1>
+    <div className="px-2 my-1 lg:my-3  lg:my-0 lg:px-10 h-sc">
+      <div className="block text-start text-lg lg:text-3xl w-5/6 lg:w-1/2 mx-auto mt-10  lg:mt-20 h-screen">
+        <h1 className="text-2xl">Account Information</h1>
         <div className="my-4">
           <div className="grid grid-cols-2 gap-x-4 gap-y-2">
             <div className="text-[#E50914] text-lg my-1">First name:</div>
