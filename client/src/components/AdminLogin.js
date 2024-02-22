@@ -5,6 +5,19 @@ import NavbarLogout from "./NavbarLogout";
 import logo from "../../src/BB.png";
 import { useNavigate } from "react-router-dom";
 
+
+
+const validateEmail = (email) => {
+    // More stringent email validation
+    const emailRegex = /^[a-zA-Z0-9._%+-]{2,}@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  };
+  
+  const validatePassword = (password) => {
+    // Password should be at least 4 characters long
+    return password.length >= 4;
+  };
+  
 export default function Login() {
     let navigate = useNavigate();
     const [email, setEmail] = useState("");
@@ -19,13 +32,13 @@ export default function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!email) {
+        if (!validateEmail(email)) {
             // setErrorMessage('Please enter your email');
-            swal("Invalid input", "Please enter your email", "warning");
+            swal("Invalid input", "Invalid email format", "warning");
             return;
         }
-        if (!password) {
-            swal("Invalid input", "Please enter your password", "warning");
+        if (!validatePassword(password)) {
+            swal("Invalid input", "Invalid password", "warning");
             return;
         }
         try {

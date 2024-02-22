@@ -52,24 +52,23 @@ export default class componentName extends Component {
   };
 
   verifyLogin = async () => {
-    let token = localStorage.getItem("adminLogin");
-    console.log("token ", token)
-    if (typeof token === "undefined" || token === null || token === "" || !token) {
-      swal("Error", "Login needed to access this page", "error").then((value) => {
-        window.location.href = "http://localhost:3000/admin-login"
-      })
-    }
-    else {
-      console.log("settings")
-      this.setState({ loggedin: true })
+    const token = localStorage.getItem("adminLogin");
+
+    if (token != "true") {
+      swal("Error", "Login needed to access this page", "error").then(() => {
+        window.location.href = "http://localhost:3000/admin-login";
+      });
+    } else {
+      console.log("settings", token);
+      this.setState({ loggedin: token });
+      this.getUsers();
     }
   };
 
   componentDidMount() {
     this.verifyLogin();
-    console.log("this.state.loggedin: ", this.state.logged)
 
-    this.getUsers();
+
 
   }
   render() {
