@@ -5,7 +5,7 @@ const { ObjectId } = require("mongoose").Types;
 
 const validateEmail = (email) => {
   // Simple email validation regex
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$/;
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return emailRegex.test(email);
 };
 
@@ -294,6 +294,22 @@ const userController = {
         return res
           .status(400)
           .json({ message: "Please provide email and password" });
+      }
+      try {
+        console.log("here")
+
+        if (!validateEmail(email)) {
+          throw new Error("Invalid email format.");
+        }
+        if (!validatePassword(password)) {
+          throw new Error("Password should be at least 4 characters long.");
+        }
+      } catch (validationError) {
+        return res.status(400).json({
+          status: false,
+          swal_title: "Invalid Input",
+          swal_message: validationError.message,
+        });
       }
       // Check if user exists
       const user = await Users.findOne({ email });
