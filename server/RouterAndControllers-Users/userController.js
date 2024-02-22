@@ -5,7 +5,7 @@ const { ObjectId } = require("mongoose").Types;
 
 const validateEmail = (email) => {
   // Simple email validation regex
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const emailRegex = /^[a-zA-Z0-9._%+-]{2,}@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{2,}$/;
   return emailRegex.test(email);
 };
 
