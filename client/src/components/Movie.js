@@ -154,12 +154,12 @@ export default class componentName extends Component {
             <div className="grid grid-cols-5 ">
               <div className="col-span-5 lg:col-span-2">
                 {" "}
-                <MovieVideoDiv
-                  backdrop_path={this.state.movie.backdrop_path}
-                />
-                {/* <MoviePosterDiv
+                {/* <MovieVideoDiv
                   backdrop_path={this.state.movie.backdrop_path}
                 /> */}
+                <MoviePosterDiv
+                  backdrop_path={this.state.movie.backdrop_path}
+                />
               </div>
               <div className="col-span-5 lg:col-span-3 ">
                 <MovieInformationDiv
