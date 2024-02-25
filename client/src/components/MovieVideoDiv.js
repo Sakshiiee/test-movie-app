@@ -41,9 +41,9 @@ export default function MovieVideoDiv() {
     useEffect(() => {
         const video = videoRef.current;
         video.loop = true;
-        video.play().catch(error => {
-            console.error('Video playback error:', error);
-        });
+        // video.play().catch(error => {
+        //     console.error('Video playback error:', error);
+        // });
     }, []);
 
 

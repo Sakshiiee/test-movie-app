@@ -3,7 +3,7 @@ import swal from "sweetalert";
 import axios from "axios";
 import { ThumbsUp } from "@phosphor-icons/react";
 import { ThumbsDown } from "@phosphor-icons/react";
-import { BookmarkSimple } from "@phosphor-icons/react";
+import { BookmarkSimple, Play } from "@phosphor-icons/react";
 import { BsBookmark } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -224,6 +224,9 @@ export default function MovieInformationDiv({ movie, provider }) {
               <ThumbsUp size={40} color="#0a0a0a" />
             </span>
           )}
+                       
+                      <a href={`/showtrailer/${movie.id}`} target="_blank"> <Play size={40} color="#F00000" weight="duotone" /></a>
+
         </span>
         <span
           onClick={() => {
