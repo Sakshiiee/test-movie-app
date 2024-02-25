@@ -25,7 +25,7 @@ const Start = () => {
     <div style={{ width: '100%', height: '100vh', overflow: 'hidden' }}>
       {showVideo && (
         <video ref={videoRef} style={{ width: '100%', height: '100%', objectFit: 'cover' }} autoPlay>
-          <source src="/Theater.mp4" type="video/mp4" />
+          <source src="/wave.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       )}
